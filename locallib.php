@@ -89,6 +89,11 @@ class assign_submission_helixassign extends assign_submission_plugin {
                 'ha.title="'.get_string('nopermission', 'assignsubmission_helixassign').'";'.
                 '</script>');
         }
+// SSU_AMEND START		
+		$mform->disabledIf('assignsubmission_file_enabled', 'assignsubmission_helixassign_enabled', 'checked');				
+		$mform->disabledIf('assignsubmission_mahara_enabled', 'assignsubmission_helixassign_enabled', 'checked');				
+		$mform->disabledIf('assignsubmission_onlinetext_enabled', 'assignsubmission_helixassign_enabled', 'checked');	
+// SSU_AMEND END
     }
 
     /**
