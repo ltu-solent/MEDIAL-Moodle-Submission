@@ -21,7 +21,7 @@ require_once ($CFG->dirroot.'/mod/helixmedia/locallib.php');
  * library class for helixassign submission plugin extending submission plugin base class
  *
  * @package assignsubmission_helixassign
- * 
+ *
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class assign_submission_helixassign extends assign_submission_plugin {
@@ -81,7 +81,7 @@ class assign_submission_helixassign extends assign_submission_plugin {
                 $disable='ha.checked=false;';
             }
 
-            $mform->addElement('html', 
+            $mform->addElement('html',
                 '<script type="text/javascript">'.
                 'var ha=document.getElementById("id_assignsubmission_helixassign_enabled");'.
                 $disable.
@@ -89,10 +89,10 @@ class assign_submission_helixassign extends assign_submission_plugin {
                 'ha.title="'.get_string('nopermission', 'assignsubmission_helixassign').'";'.
                 '</script>');
         }
-// SSU_AMEND START - DISABLE OTHER OPTIONS IF MEDIAL IS SELECTED		
-		$mform->disabledIf('assignsubmission_file_enabled', 'assignsubmission_helixassign_enabled', 'checked');				
-		$mform->disabledIf('assignsubmission_mahara_enabled', 'assignsubmission_helixassign_enabled', 'checked');				
-		$mform->disabledIf('assignsubmission_onlinetext_enabled', 'assignsubmission_helixassign_enabled', 'checked');	
+// SSU_AMEND START - DISABLE OTHER OPTIONS IF MEDIAL IS SELECTED
+		$mform->disabledIf('assignsubmission_file_enabled', 'assignsubmission_helixassign_enabled', 'checked');
+		$mform->disabledIf('assignsubmission_mahara_enabled', 'assignsubmission_helixassign_enabled', 'checked');
+		$mform->disabledIf('assignsubmission_onlinetext_enabled', 'assignsubmission_helixassign_enabled', 'checked');
 // SSU_AMEND END
     }
 
@@ -177,7 +177,7 @@ class assign_submission_helixassign extends assign_submission_plugin {
         if ($data->helixassign_activated!=1)
             return true;
 
-        if ($helixassignsubmission) {        
+        if ($helixassignsubmission) {
             return true;
         } else {
             $helixassignsubmission = new stdClass();
@@ -325,7 +325,7 @@ class assign_submission_helixassign extends assign_submission_plugin {
     }
 
     /**
-     * Has anything been submitted? 
+     * Has anything been submitted?
      *
      * @param stdClass $submission
      * @return bool
@@ -338,5 +338,3 @@ class assign_submission_helixassign extends assign_submission_plugin {
     }
 
 }
-
-
